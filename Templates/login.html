@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="Pt-Br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/style.css') }}">
+</head>
+
+<body>
+    <header>
+        <h2 class="logo">Login Page</h2>
+        <nav class="navegacao">
+            <a href="#">Home</a>
+            <a href="#">Sobre</a>
+            <a href="#">Serviços</a>
+            <a href="#">Contato</a>
+            <button class="btnLogin">Login</button>
+        </nav>
+    </header>
+
+    <div class="wrapper">
+        <span class="icone-fechar"><ion-icon name="close"></ion-icon></span>
+        <div class="form-container-login">
+            <h2>Login</h2>
+            <form action="/login" method="POST">
+                <div class="inputbox">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <input type="text" placeholder="Nome" name="username" required>
+                    <label>Nome</label>
+                </div>
+                <div class="inputbox">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" placeholder="Senha" name="password"required>
+                    <label>Senha</label>
+                </div>
+                <div class="lembrar">
+                    <label><input type="checkbox"> Lembrar Senha</label>
+                    <a href="#"> Esqueceu a senha?</a>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <div class="login-registro">
+                    <p>Não tem uma conta?<a href="#" class="registro"> Registrar</a></p>
+                </div>
+            </form>
+        </div>
+        <div class="form-container-registro">
+            <h2>Registrar-se</h2>
+            <form  action="/register" method="POST">
+                <div class="inputbox">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <input type="texto" placeholder="Nome" name="username" required>
+                    <label>Nome</label>
+                </div>
+                <div class="inputbox">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" placeholder="Senha" name="password" required>
+                    <label>Senha</label>
+                </div>
+                <div class="lembrar">
+                    <label><input type="checkbox"> Eu aceito os termos & condições</label>
+                </div>
+                <button type="submit" class="btn">Registrar</button>
+                <div class="login-registro">
+                    <p>Já tem uma conta?<a href="#" class="login"> Entrar</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="{{url_for('static', filename='../static/script.js')}}"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
